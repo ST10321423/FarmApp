@@ -1,0 +1,33 @@
+﻿@model FarmApp.Models.Product
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Category)
+        @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number", step = "0.01" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ProductionDate)
+        @Html.TextBoxFor(m => m.ProductionDate, new {@class = "form-control", type = "date"})
+    </div>
+    <div>
+        <label>Upload Image:</label>
+        <input type="file" name="productImage" accept="image" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Product</button>
+}

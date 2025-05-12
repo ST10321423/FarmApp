@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FarmApp.Models.Product>
+@{
+    ViewBag.Title = "MyProducts";
+}
+
+<h2>My Products</h2>
+
+@if (!Model.Any())
+{
+    <p>You haven't added any products yet...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>ProductionDate</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.ProductionDate.ToShortDateString()</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImagePath))
+                        {
+                            <img src="@Url.Content(item.ImagePath)" alt="Product Image" style="width: 100px; height: auto;" />
+                        }else
+                        {
+                            <span>No Image</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddFarmer";
+}
+
+<h2>AddFarmer</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" required class="form-control" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" required class="form-control" />
+    </div>
+
+    <button type="submit">Add Farmer</button>
+}
+<p>@ViewBag.Message</p>
+

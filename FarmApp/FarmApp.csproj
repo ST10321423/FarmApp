@@ -180,6 +180,10 @@
     <Compile Include="Migrations\202505120948427_Initial.Designer.cs">
       <DependentUpon>202505120948427_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505121525321_AddImagePathToProduct.cs" />
+    <Compile Include="Migrations\202505121525321_AddImagePathToProduct.Designer.cs">
+      <DependentUpon>202505121525321_AddImagePathToProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -259,11 +263,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Employee\AddFarmer.cshtml" />
+    <Content Include="Views\Farmer\AddProduct.cshtml" />
+    <Content Include="Views\Employee\ViewAll.cshtml" />
+    <Content Include="Views\Farmer\MyProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
-    <Folder Include="Views\Farmer\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -295,6 +302,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202505120948427_Initial.resx">
       <DependentUpon>202505120948427_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505121525321_AddImagePathToProduct.resx">
+      <DependentUpon>202505121525321_AddImagePathToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

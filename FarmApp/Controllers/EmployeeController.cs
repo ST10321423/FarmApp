@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using FarmApp.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
+using System.ComponentModel;
 
 namespace FarmApp.Controllers
 {
+    [Authorize(Roles = "Employee")]
     public class EmployeeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -40,7 +42,7 @@ namespace FarmApp.Controllers
             return View();
         }
 
-        public ActionResult ViewFarmers(string farmerId = null)
+        public ActionResult ViewAll(string farmerId = null, string category = null, DateTime? production = null)
         {
             var farmers = db.Users.Where(u => u.Roles.Any(r => r.RoleId == "Farmer")).ToList();
             ViewBag.Farmers = new SelectList(farmers, "Id", "Email");
@@ -49,6 +51,16 @@ namespace FarmApp.Controllers
             if (!string.IsNullOrEmpty(farmerId))
             {
                 products = products.Where(p => p.FarmerId == farmerId);
+            }
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                products = products.Where(p => p.Category.Contains(category));
+            }
+
+            if (production.HasValue)
+            {
+                products = products.Where(p => p.ProductionDate.Date == production.Value.Date);
             }
 
             return View(products.ToList());

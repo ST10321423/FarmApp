@@ -33,7 +33,14 @@ namespace FarmApp.Controllers
             if (productImage != null && productImage.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(productImage.FileName);
-                var filePath = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+                var folderPath = Server.MapPath("~/Uploads");
+                var filePath = Path.Combine(folderPath, fileName);
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
                 productImage.SaveAs(filePath);
                 product.ImagePath = "/Uploads/" + fileName;
             }

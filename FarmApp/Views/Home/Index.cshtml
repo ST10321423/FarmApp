@@ -1,33 +1,42 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<div class="container mt-4">
+    <div class="text-center">
+        <h1 class="display-4 text-success">Welcome to Agri-Energy Connect</h1>
+        <p class="lead text-muted">Empowering farmers and green energy experts to build a sustainable future.</p>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card p-4 mb-4">
+                <h4 class="text-success">🌱 Sustainable Farming Hub</h4>
+                <p>Access guides, best practices, and real-world advice on organic farming, water conservation, and soil health.</p>
+                <p>Collaborate in interactive forums with other eco-conscious farmers and experts.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-4 mb-4">
+                <h4 class="text-warning">🔋 Green Energy Marketplace</h4>
+                <p>Explore solar irrigation, wind turbines, and biogas solutions tailored for agricultural use.</p>
+                <p>Compare, review, and connect with renewable energy providers across South Africa.</p>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+        <div class="col-md-6">
+            <div class="card p-4 mb-4">
+                <h4 class="text-info">📚 Training & Resources</h4>
+                <p>Join webinars, access downloadable materials, and take short courses on eco-farming and green tech integration.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-4 mb-4">
+                <h4 class="text-primary">🤝 Collaboration & Funding</h4>
+                <p>Start joint projects, find collaborators, and discover grants and subsidies to support your sustainability goals.</p>
+            </div>
+        </div>
     </div>
-</main>
+</div>

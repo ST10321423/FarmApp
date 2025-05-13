@@ -1,19 +1,46 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+<div class="container mt-4">
+    <h1 class="text-success">Contact Us</h1>
+    <hr />
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</main>
+    <p>
+        Have questions, feedback, or partnership ideas? We'd love to hear from you!
+    </p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="John Doe">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Send Message</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <h5 class="text-muted">📍 Address</h5>
+            <p>123 GreenTech Way, Pretoria, South Africa</p>
+
+            <h5 class="text-muted">📞 Phone</h5>
+            <p>+27 12 345 6789</p>
+
+            <h5 class="text-muted">📧 Email</h5>
+            <p>info@agrienergyconnect.co.za</p>
+        </div>
+    </div>
+</div>

@@ -2,48 +2,50 @@
 @{
     ViewBag.Title = "All Products";
 }
-<h2>Products by Farmer</h2>
+<div class="container mt-4">
+    <h2>Products by Farmer</h2>
 
-@using (Html.BeginForm("ViewAll", "Employee", FormMethod.Get))
-{
-    <div class="form-check-inline">
-        @Html.DropDownList("farmerId", (SelectList)ViewBag.Farmers, "Select Farmer")
-
-        <input type="text" name="category" placeholder="Category" class="form-control" />
-
-        <label>Production Date:</label>
-        <input type="date" name="production" class="form-control" />
-
-        <button type="submit" class="btn btn-primary">Filter</button>
-    </div>
-}
-
-<table>
-    <tr>
-        <th>Product</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Farmer</th>
-        <th>Image</th>
-    </tr>
-    @foreach (var item in Model)
+    @using (Html.BeginForm("ViewAll", "Employee", FormMethod.Get))
     {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Category</td>
-            <td>@item.Price</td>
-            <td>@item.Farmer.Email</td>
-            <td style="text-align:center;">
-                @if (!string.IsNullOrEmpty(item.ImagePath))
-                {
-                    <img src="@Url.Content(item.ImagePath)" alt="Product Image" style="width: 100px; height: auto;" />
-                }
-                else
-                {
-                    <span>No Image</span>
-                }
-            </td>
-        </tr>
+        <div class="form-check-inline">
+            @Html.DropDownList("farmerId", (SelectList)ViewBag.Farmers, "Select Farmer")
+
+            <input type="text" name="category" placeholder="Category" class="form-control" />
+
+            <label>Production Date:</label>
+            <input type="date" name="production" class="form-control" />
+
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
     }
-</table>
+
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Farmer</th>
+            <th>Image</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Price</td>
+                <td>@item.Farmer.Email</td>
+                <td style="text-align:center;">
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <img src="@Url.Content(item.ImagePath)" alt="Product Image" style="width: 100px; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
 
